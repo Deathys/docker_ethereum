@@ -1,0 +1,7 @@
+version: '2'
+services:
+  ethereum:
+    build: ./eth
+    ports: 
+      - "30303:30303"
+      - "8000:8000"
