@@ -10,6 +10,8 @@ RUN apt-get update
 
 RUN apt-get install -y ethereum
 
+RUN apt install -y net-tools
+
 COPY scripts /scripts
 
 WORKDIR /scripts
