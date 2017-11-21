@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+RUN echo "net.ipv6.conf.all.forwarding=1" >>  /etc/sysctl.conf
+
 RUN apt-get update
 
 RUN apt-get -y install software-properties-common
@@ -21,5 +23,7 @@ RUN geth --rpc --rpcport "8000" --rpccorsdomain "*" --datadir "./chains/devtest"
 RUN geth --datadir "chains/devtest" --password "./pswd" account new 
 
 RUN chmod 777 ./run.sh 
+
+RUN chmod 777 ./attachOne.sh
 
 CMD ["./run.sh"]
